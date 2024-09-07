@@ -1,0 +1,12 @@
+AppConfig.class
+Pedido.class
+CheckoutController.class
+Pagamento.class
+PaymentClient.class
+PedidoRepository.class
+PedidoService.class
+PedidoController.class
+PagamentoService.class
+StatusPedido.class
+CheckoutApplication.class
+PedidoRequest.class
