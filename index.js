@@ -7,8 +7,7 @@ const port = 3000;
 app.post('/processar-pagamento', (req, res) => {
     const { valor, pagamentoSucesso } = req.body;
     // Lógica para processar o pagamento
-    // ...
-
+    
     // Simula o sucesso do pagamento
     if (pagamentoSucesso) {
         res.json(true);
