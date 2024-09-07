@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 import org.springframework.web.bind.annotation.*;
 
 
@@ -28,6 +30,14 @@ public class PedidoController {
 class PedidoRequest {
     private BigDecimal valor;
     private boolean pagamentoSucesso;
+	public BigDecimal getValor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	public Object isPagamentoSucesso() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
     // Getters e Setters
 }
