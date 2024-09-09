@@ -5,6 +5,6 @@ public class PagamentoService {
 
     public boolean processarPagamento(Pagamento pagamento) {
        
-        return pagamento.isSucesso(); // Simulação simples
+        return pagamento.isSucesso(); 
     }
 }
