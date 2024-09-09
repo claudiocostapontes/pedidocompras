@@ -25,24 +25,19 @@ public class Pagamento {
     private boolean sucesso;
 
 	public void setValor(BigDecimal valor2) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void setSucesso(Object pagamentoSucesso) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public void setPedido(Pedido pedido2) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	public boolean isSucesso() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
-    // Getters e Setters
 }
