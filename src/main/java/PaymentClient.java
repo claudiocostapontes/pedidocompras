@@ -12,7 +12,7 @@ public class PaymentClient {
 
     public boolean processarPagamento(PedidoRequest pedidoRequest) {
         String url = "http://localhost:3000/processar-pagamento"; // URL do microsserviço de pagamento
-        // Envia a solicitação para o microsserviço de pagamento e obtém a resposta
+        /*microsserviço de pagamento*/
         Boolean sucesso = restTemplate.postForObject(url, pedidoRequest, Boolean.class);
         return sucesso != null && sucesso;
     }
