@@ -28,16 +28,21 @@ public class PedidoController {
 }
 
 class PedidoRequest {
-    private BigDecimal valor;
-    private boolean pagamentoSucesso;
+    @SuppressWarnings("unused")
+	private BigDecimal valor;
+    @SuppressWarnings("unused")
+	private boolean pagamentoSucesso;
 	public BigDecimal getValor() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	public Object isPagamentoSucesso() {
-		// TODO Auto-generated method stub
 		return null;
 	}
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+	public void setPagamentoSucesso(boolean pagamentoSucesso) {
+		this.pagamentoSucesso = pagamentoSucesso;
+	}
 
-    // Getters e Setters
 }
