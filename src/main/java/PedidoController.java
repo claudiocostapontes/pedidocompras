@@ -1,48 +1,42 @@
-import java.math.BigDecimal;
-
-import org.springframework.web.bind.annotation.*;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/pedidos")
 public class PedidoController {
 
-    private final PedidoService pedidoService;
+    private static final String Object = null;
+	private final PedidoService pedidoService;
+	private char[] isPagamentoSucesso;
 
     public PedidoController(PedidoService pedidoService) {
         this.pedidoService = pedidoService;
     }
 
     @PostMapping
-    public void criarPedido(@RequestBody PedidoRequest pedidoRequest) {
+    public <PedidoRequest> String criarPedido(@RequestBody PedidoRequest pedidoRequest, char[] getNomeCliente) {
         Pedido pedido = new Pedido();
-        pedido.setValor(pedidoRequest.getValor());
+        pedido.setId(((Pedido) pedidoRequest).getId());
+        pedido.setValor(((Pedido) pedidoRequest).getValor());
 
+        	System.out.println(getNomeCliente);
+        
         Pagamento pagamento = new Pagamento();
         pagamento.setPedido(pedido);
-        pagamento.setValor(pedidoRequest.getValor());
-        pagamento.setSucesso(pedidoRequest.isPagamentoSucesso());
+        pagamento.setValor(((Pedido) pedidoRequest).getValor());
+        pagamento.setSucesso ((Object));
+        
+        System.out.println(isPagamentoSucesso);
 
-        pedidoService.criarPedido(pedido, pagamento);
+       
+        boolean pedidoCriado = pedidoService.criarPedido(pedido, pagamento);
+
+        if (pedidoCriado) {
+            return "Pedido criado com sucesso!";
+        } else {
+            return "Falha ao criar o pedido.";
+        }
     }
-}
-
-class PedidoRequest {
-    @SuppressWarnings("unused")
-	private BigDecimal valor;
-    @SuppressWarnings("unused")
-	private boolean pagamentoSucesso;
-	public BigDecimal getValor() {
-		return null;
-	}
-	public Object isPagamentoSucesso() {
-		return null;
-	}
-	public void setValor(BigDecimal valor) {
-		this.valor = valor;
-	}
-	public void setPagamentoSucesso(boolean pagamentoSucesso) {
-		this.pagamentoSucesso = pagamentoSucesso;
-	}
-
 }

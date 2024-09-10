@@ -1,3 +1,5 @@
+import java.net.http.HttpRequest;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,9 +12,9 @@ public class PaymentClient {
         this.restTemplate = restTemplate;
     }
 
-    public boolean processarPagamento(PedidoRequest pedidoRequest) {
-        String url = "http://localhost:8080/processar-pagamento"; // URL do microsserviço de pagamento
-        /*microsserviço de pagamento*/
+    public boolean processarPagamento(HttpRequest pedidoRequest) {
+        String url = "http://localhost:8080/processar-pagamento"; 
+      
         Boolean sucesso = restTemplate.postForObject(url, pedidoRequest, Boolean.class);
         return sucesso != null && sucesso;
     }

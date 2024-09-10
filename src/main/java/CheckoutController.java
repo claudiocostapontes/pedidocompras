@@ -1,3 +1,5 @@
+import java.net.http.HttpRequest;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -11,11 +13,9 @@ public class CheckoutController {
     }
 
     @PostMapping
-    public String criarPedido(@RequestBody PedidoRequest pedidoRequest) {
-        // Lógica para criar o pedido, por exemplo, salvar no banco de dados
-        // ...
-
-        // Chama o microsserviço de pagamento
+    public String criarPedido(@RequestBody HttpRequest pedidoRequest) {
+      
+     
         boolean pagamentoSucesso = paymentClient.processarPagamento(pedidoRequest);
 
         if (pagamentoSucesso) {

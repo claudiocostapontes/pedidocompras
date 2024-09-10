@@ -14,8 +14,6 @@ public class Pedido {
     @Column(nullable = false)
     private StatusPedido status;
 
-    // Getters e Setters
-
     public Long getId() {
         return id;
     }

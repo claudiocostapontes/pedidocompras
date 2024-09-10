@@ -13,7 +13,7 @@ public class PedidoService {
     }
 
     @Transactional
-    public void criarPedido(Pedido pedido, Pagamento pagamento) {
+    public boolean criarPedido(Pedido pedido, Pagamento pagamento) {
         pedido.setStatus(StatusPedido.PENDENTE);
         pedidoRepository.save(pedido);
 
@@ -26,5 +26,6 @@ public class PedidoService {
             pedido.setStatus(StatusPedido.CONFIRMADO);
             pedidoRepository.save(pedido);
         }
+		return pagamentoBemSucedido;
     }
 }
