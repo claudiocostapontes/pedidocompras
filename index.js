@@ -2,13 +2,11 @@ const express = require('express');
 const app = express();
 app.use(express.json());
 
-const port = 3000;
+const port = 8080;
 
 app.post('/processar-pagamento', (req, res) => {
     const { valor, pagamentoSucesso } = req.body;
-    // Lógica para processar o pagamento
-    
-    // Simula o sucesso do pagamento
+      
     if (pagamentoSucesso) {
         res.json(true);
     } else {
