@@ -5,8 +5,8 @@ Pagamento.class
 PaymentClient.class
 PedidoRepository.class
 PedidoService.class
+com\exemplo\checkout\CheckoutApplication.class
 PedidoController.class
 PagamentoService.class
 StatusPedido.class
-CheckoutApplication.class
 PedidoRequest.class
